@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+    *,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+:root {
+  --btn-background-color: hsl(120, 100%, 25%);
+  --btn-foreground-color: hsl(0, 0%, 100%);
+  --btn-font-size: 1.1rem;
+  --btn-font-weight: 400;
+  --btn-font-style: normal;
+  --btn-font-text-transform: uppercase;
+  --btn-font-line-height: 1.2;
+  --btn-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --btn-border-radius: 0.5rem;
+  --btn-border-width: 1px;
+  --btn-border-style: solid;
+  --btn-border-color-light: hsl(120, 100%, 35%);
+  --btn-border-color-dark: hsl(120, 100%, 15%);
+  --btn-padding-horizontal: 2rem;
+  --btn-padding-vertical: 1rem;
+  --btn-width: var(--btn-width);
+  --btn-height: var(--btn-height);
+  --btn-min-width: 9rem;
+  --btn-min-height: 3rem;
+  --btn-scale: 1;
+  --btn-scale-hover: 0.99;
+  --btn-shadow-distance: 3px;
+  --btn-shadow-distance-hover: 0px;
+  --btn-shadow-color: hsl(0, 0%, 0%);
+  --btn-transition-speed: 0.0625s;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100svw - 2rem;
+  max-width: 75rem;
+  min-height: 100svh;
+  display: grid;
+  place-content: center;
+}
+
+.oc_btn {
+  background-color: var(--btn-background-color);
+  color: var(--btn-foreground-color);
+  font-family: var(--btn-font-family);
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  font-style: var(--btn-font-style);
+  text-transform: var(--btn-font-text-transform);
+  line-height: var(--btn-font-line-height);
+  border-top-left-radius: var(--btn-border-radius);
+  border-top-right-radius: var(--btn-border-radius);
+  border-bottom-right-radius: var(--btn-border-radius);
+  border-bottom-left-radius: var(--btn-border-radius);
+  border-left-width: var(--btn-border-width);
+  border-top-width: var(--btn-border-width);
+  border-right-width: var(--btn-border-width);
+  border-bottom-width: var(--btn-border-width);
+  border-left-color: var(--btn-border-color-light);
+  border-top-color: var(--btn-border-color-light);
+  border-right-color: var(--btn-border-color-dark);
+  border-bottom-color: var(--btn-border-color-dark);
+  border-left-style: var(--btn-border-style);
+  border-top-style: var(--btn-border-style);
+  border-right-style: var(--btn-border-style);
+  border-bottom-style: var(--btn-border-style);
+  padding-left: var(--btn-padding-horizontal);
+  padding-top: var(--btn-padding-vertical);
+  padding-right: var(--btn-padding-horizontal);
+  padding-bottom: var(--btn-padding-vertical);
+  width: max-content;
+  height: max-content;
+  min-width: var(--btn-min-width);
+  min-height: var(--btn-min-height);
+  scale: var(--btn-scale);
+  filter: drop-shadow(
+    var(--btn-shadow-distance) var(--btn-shadow-distance)
+      var(--btn-shadow-distance) var(--btn-shadow-color)
+  );
+  transition: all var(--btn-transition-speed) ease;
+
+  &:hover {
+    background-color: var(--btn-background-color);
+    color: var(--btn-foreground-color);
+    border-left-width: var(--btn-border-width);
+    border-top-width: var(--btn-border-width);
+    border-right-width: var(--btn-border-width);
+    border-bottom-width: var(--btn-border-width);
+    border-left-color: var(--btn-border-color-dark);
+    border-top-color: var(--btn-border-color-dark);
+    border-right-color: var(--btn-border-color-light);
+    border-bottom-color: var(--btn-border-color-light);
+    border-left-style: var(--btn-border-style);
+    border-top-style: var(--btn-border-style);
+    border-right-style: var(--btn-border-style);
+    border-bottom-style: var(--btn-border-style);
+    scale: var(--btn-scale-hover);
+    filter: drop-shadow(
+      var(--btn-shadow-distance-hover) var(--btn-shadow-distance-hover)
+        var(--btn-shadow-distance-hover) var(--btn-shadow-color)
+    );
+  }
+}
+  </style>
+</head>
+<body>
+    <div class="wrapper" id="wrapper">
+    <button class="oc_btn" id="oc_btn">push this button</button>
+  </div>
+</body>
+</html>
