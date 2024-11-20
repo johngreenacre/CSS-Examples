@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        html {
+            background-color: hsl(0, 0%, 10%);
+            color: hsl(0, 0%, 90%);
+            font: normal 1.2rem "Poppins";
+        }
+
+        .wrapper {
+            margin: 0 auto;
+            width: 100svw;
+            max-width: 1200px;
+            min-height: 100svh;
+            display: grid;
+            place-content: center;
+        }
+
+        .scene {
+            background-color: transparent;
+            width: 320px;
+            height: 480px;
+            perspective: 600px;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            border-radius: 32px;
+            position: relative;
+            transition: transform 0.5s ease;
+            transform-style: preserve-3d;
+        }
+
+        .card_face {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+        }
+
+        .card_face-front {
+            background-image: url("CardFront.jpg");
+            background-position: center;
+            background-size: cover;
+            border-radius: 32px;
+        }
+
+        .card_face-back {
+            background-image: url("CardBack.jpg");
+            background-position: center;
+            background-size: cover;
+            border-radius: 32px;
+            transform: rotateY(180deg);
+        }
+
+        .card.is-flipped {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="scene">
+            <div class="card">
+                <div class="card_face card_face-front"></div>
+                <div class="card_face card_face-back">Back</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var card = document.querySelector('.card');
+        card.addEventListener('click', function () {
+            card.classList.toggle('is-flipped');
+        });
+    </script>
+</body>
+
+</html>
